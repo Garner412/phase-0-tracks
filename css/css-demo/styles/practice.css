@@ -12,3 +12,11 @@
 .smaller-text {
 	font-size: .8em;
 }
+
+#contact-info:hover {
+	background-color: yellow;
+}
+
+ul > li {
+	font-size: .10em;
+}
