@@ -1,0 +1,29 @@
+Briefly describe your understanding of what the browser does, including definitions of the following:
+--The browser is used to search the WWW to find the information you are querying for. It retreives the required information and displays it for the user.
+client - the client runs on a user's local computer and connects to the server as necessary. A Web Browser is an example of a client
+server - provides the web pages via HTTP. The server collects the data you're looking for and sends it to the browser
+render - the process of converting the data into the content displayed on the screen.
+
+What is HTML? In your answer, include definitions of the following:
+HTML stands for HyperText Markup Language and is the standard markup language for creating webpages. Web browsers read the HTML files and render them into visual web pages. 
+tag - specifies how the document, or a portion of the document, should be formatted. Tags come in pairs where the first opens the tag and the second closes the tag.
+element - an individual component of an HTML document or web page. HTML is composed of a tree of HTML elements.
+node - represents the information contained in a single structure.
+attribute - modifier of an HTML element type. Attributes are added to an HTML start tag.
+block element - Appear on the as if they have a line break before and after them and begin on a new line.
+inline element - Can appear within sentences and do not begin on a new line.
+
+Very briefly, explain the purpose of the following elements:
+head - defines information in a document.
+body - defines the document's body
+p - defines a paragraph
+form - defines a form for user input
+div - defines a section in a document
+span - defines a section in a document
+select - defines a dropdown list
+h2 - defines a heading
+ol - defines an ordered list
+ul - defines an unorder list
+table - defines a table
+tr - defines a row in a table
+td - defines a cell in a table
