@@ -4,6 +4,8 @@ html {
   background-image: url("../images/wov.png");
 }
 
+/* Anything nested in the body tag will be changed accordingly */
+
 body {
   font-family: "Georgia", serif;
   padding: 20px 30px;
@@ -14,6 +16,7 @@ body {
   font-size: 1.2em;
 }
 
+/* Changes the bullets of an unordered list to a square */
 ul {
   list-style-type: square;
 }
@@ -25,19 +28,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 
-
 You can select a class (preceded by a period) 
 or ID (preceded by a hash).
-
 In HTML, a class is assigned like this:
 <p class="your-class-here">some text</p>
-
 An ID is assigned like this:
 <p id="your-id-here">some text</p>
-
 A given ID should only be used once in a document.
 A given class can be used multiple times in a document.
-
 */
 
 .experience-category, #resume-title {

@@ -1,3 +1,5 @@
+/* Any section with an id of contact-info with a nested p will change display */
+
 section#contact-info {
   position: fixed;
   top: 0px;
@@ -9,9 +11,13 @@ section#contact-info {
   padding: 20px;
 }
 
+/* Any h1 with an id of resume-title will change the margin */
+
 h1#resume-title {
   margin-top: 70px;
 }
+
+/* Any section with an id of contact-info with a nested p will change display */
 
 section#contact-info p {
   display: inline;
