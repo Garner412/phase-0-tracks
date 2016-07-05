@@ -1,0 +1,44 @@
+- Press button to call elevator
+- When doors open, enter elevator
+- Stop when in the middle of the elevator
+- Turn towards buttons and move towards then. Stop when 1 foot away
+- Find button that has the number of the floor you wish the elevator to take you to
+- Press the button
+
+
+Real-Life Algorithm - Morning Routine
+1. Turn off alarm clock.
+2. Get out of bed.
+3. Make the bed.
+4. Walk to bathroom.
+<-- Turn on bathroom lights.
+5. Empty bowels.
+6. Flush toilet. 
+7. Wash hands with soap and water.
+<-- Dry hands with towel.
+8. Acquire toothbrush from drawer.
+<-- Acquire toothpaste from drawer.
+9. Apply toothpaste.
+10. Return toothpaste to drawer.
+11. Brush teeth for 60 secs.
+12. Rinse toothbrush for 10 secs after brushing has ended.
+<-- Shake toothbrush for 5 sec to remove extra water.
+13. Return toothbrush to drawer
+14. Spit toothpaste from the mouth into the sink.
+15. Rinse mouth with water.
+<-- Rinse sink with water.
+16. Wash hands with soap and water.
+17. Dry hands with towel.
+18. Open contact containers.
+19. Remove right contact from container.
+20. Place contact into right eye.
+21. Remove left contact from container.
+22. Place contact into left eye.
+23. Throw containers in the trash can.
+24. Turn off bathroom lights.
+25. Return to bedroom.
+26. Put on clothes.
+
+
+
+
