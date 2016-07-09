@@ -11,7 +11,7 @@ puts "Is your hamster a good candidate for adoption?"
 adoption = gets.chomp
 
 puts "How old is your hamster?"
-age = gets.to_i
+age = gets.chomp
 	if age == ""
 		age = nil	
 	else 
