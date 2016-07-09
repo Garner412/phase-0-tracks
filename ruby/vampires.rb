@@ -27,14 +27,16 @@ until times_run == number_employees
 		puts "Definitely a vampire."
 	elsif allergy == "sunshine"
 		puts "Probably a vampire"		
-	elsif year != "1989" && garlic != "yes" && insurance != "yes"
+	elsif year != "1989" && garlic == "no" && insurance == "no"
 		puts "Almost certainly a vampire."
 	elsif year == "1989" && (garlic == "yes" || insurance == "yes")
 		puts "Probably not a vampire."
-	elsif year != "1989" && (garlic != "yes" || insurance != "yes")
+	elsif year != "1989" && (garlic == "no" || insurance == "no")
 		puts "Probably a vampire."
 	else
 		puts "Results inconclusive."
 	end
 	times_run += 1
 end
+
+puts "Actually, nevermind! What do these questions have to do with anything? Let's all be friends."
