@@ -1,0 +1,42 @@
+.column-1 {
+  background-color: #0066ff;
+  float: left;
+  width: 40%;
+  font-family: Verdana;
+  border-width: 2px;
+  border-color: #ffcccc;
+  border-style: dashed;
+  padding: 2.5%;
+  margin-left: 4%;
+}
+
+.column-2 {
+  background-color: #ffcccc;
+  float: right;
+  width: 40%;
+  font-family: Verdana;
+  border-width: 2px;
+  border-color: #0066ff;
+  border-style: dashed;
+  padding: 2.5%;
+  margin-right: 4%;
+}
+
+footer {
+  background-color: grey;
+  clear: both;
+  font-family: Verdana;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+header {
+  font-family: Verdana;
+  background-color: #ffffb3;
+  border-width: 2px;
+  border-color: green;
+  border-style: dashed;
+  padding: 10px;
+  margin-left: 4%;
+  margin-right: 4%;
+}
