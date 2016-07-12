@@ -1,0 +1,26 @@
+Name at least three categories of CSS adjustments (example: colors)?
+	1. Font
+	2. Font size
+	3. Borders
+
+What are the three ways to link a CSS rule to an HTML document? Which one is the best and why?
+	1. External style sheet
+	2. Internal style sheet
+	3. Inline style sheet
+	The best is the external stylesheet. It allows you to link the sheet to more than one html page so you can keep an entire site consistant unlike an internal stylesheet where the code would need to be copy and pasted onto each page. The inline style sheet would be the least efficient as you would have to set the styles within each element repeatedly.
+
+What is a selector? Give examples of at least three types of selectors.
+	A selector point to the HTML element you want to style. 
+	1. element selector
+	2. class selector 
+	3. id selector
+
+What is the box model?
+	The box model consists of 4 different items that all wrap around the previous item. In the middle is the actual content, surrounded by padding, surrounded by borders, surrounded by margins. 
+
+Explain and give an example of the cascading effect of CSS.
+	The cascading effect of CSS means that the browsers works from the most vague styles and then applies more specific styles overtop. It always chooses the most specific characteristic. For example - if you had a rule that set all paragraphs to blue, but then applied another rule that the first paragraph of each page is red, the CSS will apply the first paragraph rule overtop of the all paragraphs rule.
+
+Name two CSS techniques that assist in responsive design.
+	1. We can add fluid widths to accommodate screens of different sizes.
+	2. We can add media queries to give more responsiveness.
