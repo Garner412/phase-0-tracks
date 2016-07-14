@@ -18,6 +18,9 @@ def encrypt(input)
 
 	until times_run == input.length
 		new_value = alphabet.index(input[times_run]) + 1
+			if new_value > 25
+				new_value = new_value - 26
+			end
 		new_password += alphabet[new_value]
 		times_run += 1
 
@@ -34,6 +37,9 @@ def decrypt(input)
 
 	until times_run == input.length
 		new_value = alphabet.index(input[times_run]) - 1
+			if new_value < 0
+				new_value = new_value + 26
+			end
 		new_password += alphabet[new_value]
 		times_run += 1
 
@@ -44,4 +50,6 @@ end
 
 
 encrypt("abc")
+encrypt("zed")
 decrypt("bcd")
+decrypt("afe")
