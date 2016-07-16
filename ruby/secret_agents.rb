@@ -9,7 +9,6 @@
 	# subtract 1 to index
 	# return that letter(value)
 
-
 def encrypt(input)
 	new_value = 0
 	new_password = ""
@@ -25,7 +24,7 @@ def encrypt(input)
 		times_run += 1
 
 	end
-	puts new_password
+	puts "Your encrypted password is #{new_password}."
 end
 
 
@@ -44,12 +43,30 @@ def decrypt(input)
 		times_run += 1
 
 	end
-	puts new_password
+	puts "Your decrypted password is #{new_password}."
 end
 
 
-
+=begin
 encrypt("abc")
 encrypt("zed")
 decrypt("bcd")
 decrypt("afe")
+
+(encrypt("swordfish"))
+=end
+
+puts "Agent, would you like to encrypt or decrypt a password?"
+decision = gets.chomp.downcase
+
+if decision == "encrypt"
+	puts "What password would you like to encrypt?"
+	password = gets.chomp.downcase
+	encrypt(password)
+elsif decision == "decrypt"
+	puts "What password would you like to encrypt?"
+	password = gets.chomp.downcase
+	decrypt(password)
+else 
+	puts "I did not understand."
+end
