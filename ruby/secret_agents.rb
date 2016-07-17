@@ -53,7 +53,8 @@ encrypt("zed")
 decrypt("bcd")
 decrypt("afe")
 
-(encrypt("swordfish"))
+decrypt(encrypt("swordfish"))
+#unfortunately this doesn't work. I believe it's because the password that is the output for the encrypt is not being used as the input for the decrypt.
 =end
 
 puts "Agent, would you like to encrypt or decrypt a password?"
