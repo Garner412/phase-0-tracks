@@ -1,0 +1,47 @@
+1. What is a variable? Why might a programmer use a variable?
+	Variable remember and store data (numbers, strings, floats, etc). Programmers use variables to store data for later use or to add it to other data or to compare the data in a different portion of their code.
+
+2. If the value of first_name is "Abraham" and last_name is "Lincoln", explain the order in which Ruby will run the line full_name = first_name + last_name, and what the final result will be.
+	Ruby will see full_name = and look to set it equal the the value on the right of the = sign. it will see first name value is set at "Abraham". It will then look for the value of last_name which is set at "Lincoln". Once it retrieves those two values it will add them together and set full_name = "AbrahamLincoln".
+
+3. For each of the following data types, write a short definition and give at least one example of when you might use the data type in a program. (Don't use an example we've already provided.)
+	- string - a string is a group of characters between quotation marks.
+		Eg. "Review and Reflect helps us to return to concept we previously covered to ensure we understood what we learned."   
+	- integer - an integer is a number before a decimal point. If a calculation is performed, any digits after the decimal place will be dropped.
+		Eg. Your program might ask for numerical input (such as year of birth) and have to perform a calculation
+	- float - a number that includes values after the decimal place
+		Eg. If your program is performing any calculations that may include digits after the decimal place, or needs to allow for input that includes digits after the decimal place
+	- nil - no value, not 0, not blank... no value
+		Eg. If you're having people fill out a form and they have no value for a specific field it should return nil instead of 0 or blank
+	- boolean - when you need to set conditions to include AND (%%) or OR (||)
+		Eg. If you need to multiple conditions to be true or false or a combination of true and false to achieve a desired outcome.
+
+4. What is an algorithm?
+	A set of rules or a process that can be followed and repeated multiple times.
+
+5. What are two common categories of algorithm in computer science? 
+	Searching and sorting.
+
+6. What is a method? Why might a programmer choose to use a method?
+	A set of code that be be used repeatedly by taking in a value and returning another value. Methods allow you to simple call them instead of rewriting code in multiple places to perform the same thing. Without methods a lot of code would need to be rewritten.
+
+7. Define the following terms as they relate to a method. 
+	return value - the value that is returned by the method
+	side effect - an effect of the method that might modify a value outside of the method such as a global or static variable
+	parameter - data you are taking from outside the methods scope and introducing into the method
+	argument - pieces of information that are sent to the method to be modified or used to retrun a specific value
+	implicit return - the value of the last line of expression
+
+8. What are global scope and method scope? How do those scopes impact the availability of data at different points in a program?
+	Global scope are variables and data that is accessible throughout the entire file. Method scope are variables and data that is only accessible while within a method. You cannot cross over data from method scope to global scope, but can you can call upon global data within a method.
+
+9. What is control flow? Why might a programmer choose to use flow control?
+	Control flow is controlling how your program is read by the computer. The program reads from top to bottom, so if your have a long program and the top part of it is most all that is needed to be used, but you have exceptions that aren't used as often, you can place them further down to save time. You also need to define all of your methods prior to the driver data beginning so it can call upon those methods properly.
+
+10. Define the following terms as they relate to flow control.
+	loop - a function that is performed repeatedly
+	if - if the expression is true, do what is within the if statement
+	else - if no other if or elsif statement is true, do this action.
+	elsif - if you need to check if multiple conditions are true, you use elsif
+	while - do what is defined as long as the condition in the while statement is true
+	until - do what is defined as long as the condition in the until statement is false
