@@ -34,3 +34,16 @@ puts "Would the client like to begin work this month? (yes/no)"
 client_details[:start_in_month] = gets.chomp
 
 puts client_details
+
+
+puts "Would you like to update any information after reviewing it?"
+update_choice = gets.chomp
+
+if update_choice == "yes"
+	puts "What would you like to update?"
+elsif update_choice == "no"
+	puts "Have a great day!"
+else
+	puts "I did not understand your terrible typing."
+end
+
