@@ -76,6 +76,15 @@ end
 p food
 .take_while
 
-#4.
+#4. .take_while
+temperatures = [77, 82, 65, 90, 72]
+new_temp = []
+new_temp = temperatures.take_while {|temp| temp > 75} 
+p new_temp
+
+#.drop_while
+new_temp2 = []
+new_temp2 = temperatures.drop_while {|temp| temp < 75 }
+p new_temp2
 
 
