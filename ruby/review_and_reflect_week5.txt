@@ -1,0 +1,33 @@
+Data Structures
+1. Why are data structures useful in programming?
+	Data structures are used to store and organize information. They allow you to store information for later use. Data structures allow you to enter information into the same variable instead of having to create a lot of variables. You wouldn't want to create a new variable for each item of a grocery list entered, it's easier to store them all in the same variable.
+
+Arrays
+2. Define "array" and describe the characteristics of an array.
+	A data structure that contains a collection of elements. Accessible through index numbers, but not keys.
+
+3. Give two original examples of data sets that an array might be well-suited for.
+	1. Grocery List
+	2. List of players in a certain position
+
+Hashes
+4. Define "hash" and describe the characteristics of a hash.
+	A data structure that stores elements with a key and a value. Utilized over an array to be able to keep a specific value with a key instead of it being randomly stored.
+
+5. Give two original examples of data sets that a hash might be well-suited for.
+	1. Form
+	2. Jersey numbers for players
+
+Iteration
+6. Why is iteration useful?
+	Interation allows you to perform a specific piece of code repeatedly to an array or hash.
+
+7. Give an example of a real-life task that would require iteration if you wrote an algorithm for it.
+	A simple example would be if you wanted to capitalize each element of an array or hashes. You would iterate through each element with a block of code that utilizes .capitalize
+
+Blocks
+8. What is a block?
+	A block is a method that you perform without defining a method outside of the place that you want to run the block. Blocks can be written within | | or a do and end. The block will perform the code to each iteration.
+
+9. What is a block parameter, and where does its value come from?
+	A block parameter is that value is being used for the code block. You do not need a parameter to run a block of code though. Its value depends on the method you're calling.
