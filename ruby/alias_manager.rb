@@ -6,7 +6,8 @@ swap vowels to the next one
 swap consonant to the next one
 print the name back to the console 	
 =end
-
+full_name = ''
+spy_names = []
 
 def name_swap(full_name)
 vowels = %w{a e i o u}
@@ -27,7 +28,7 @@ consonants = %w{b c d f g h j k l m n p q r s t v w x y z}
 	end
 	
 	secret_name = last_name.join('').capitalize! + " " + first_name.join('').capitalize!
-	p secret_name
+
 end
 
 
@@ -46,19 +47,22 @@ def name_scrambler(letter)
 	  else
 	  	consonants[consonants.index(letter) + 1]
 	  end
-end
-end
-
-
-name_swap('Greg Garner')
-
-
-until full_name == 'quit'
-	puts "What is your name, spy?"
-	full_name = gets.chomp
-	break if full_name == 'quit'
-	name_swap(full_name)
 	end
 end
 
+
+loop do
+  puts "What is your name, spy? (Type 'quit' to exit)"
+  full_name = gets.chomp
+  if full_name == "quit"
+    puts "Exiting program"
+    break
+  else
+    puts "Your field name is #{name_swap(full_name)}"
+    spy_names << [full_name, name_swap(full_name)]
+  end
+end
+
+spy_names.each do |name|
+  puts "#{name[1]} is actually #{name[0]}"
 end
