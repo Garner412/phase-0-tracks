@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
+
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
 		@gender = gender
@@ -19,25 +22,26 @@ class Santa
 	def celebrate_birthday
 		@age += 1
 	end
+	
 	#move reindeer to end of array
 	def get_mad_at(reindeer_name)
 		@reindeer_ranking.push(reindeer_name)
 	end
-	#change the gender of santa
-	def gender=(new_gender)
-		@gender = new_gender
-	end
+	# setter method - change the gender... removed for attr_accessor
+	# def gender=(new_gender)
+	# 	@gender = new_gender
+	# end
 
-	#return age variable
-	def age
-		@age
-	end
-	#return ethnicity variable
-	def ethnicity
-		@ethnicity
-	end
+	# getter method - return age variable... removed for attr_reader
+	# def age
+	# 	@age
+	# end
+	# getter method - return ethnicity variable... removed for attr_reader
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
-	#
+	# Display variable details
 	def about
 		puts "Your gender is #{@gender}!"
 		puts "Your ethnicity is #{@ethnicity}!"
