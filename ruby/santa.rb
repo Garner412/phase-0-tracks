@@ -1,6 +1,6 @@
 class Santa
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+	attr_reader :ethnicity
+	attr_accessor :gender, :age
 
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
@@ -99,11 +99,21 @@ end
 =end
 
 #Driver code to test class
-santa = Santa.new("male", "white")
-santa.speak
-santa.eat_milk_and_cookies("Chocolate Chip")
-santa.about
-santa.celebrate_birthday
-santa.get_mad_at("Vixen")
-santa.gender = "No one knows"
-santa.about
+# santa = Santa.new("male", "white")
+# santa.speak
+# santa.eat_milk_and_cookies("Chocolate Chip")
+# santa.about
+# santa.celebrate_birthday
+# santa.get_mad_at("Vixen")
+# santa.gender = "No one knows"
+# santa.about
+
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+50.times do
+  santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+  santa.age = rand(1..140)
+  santa.about
+end
