@@ -15,13 +15,39 @@ class Santa
 		puts "That was a good #{cookie} cookie!"
 	end
 
+	#add 1 to age
+	def celebrate_birthday
+		@age += 1
+	end
+	#move reindeer to end of array
+	def get_mad_at(reindeer_name)
+		@reindeer_ranking.push(reindeer_name)
+	end
+	#change the gender of santa
+	def gender=(new_gender)
+		@gender = new_gender
+	end
+
+	#return age variable
+	def age
+		@age
+	end
+	#return ethnicity variable
+	def ethnicity
+		@ethnicity
+	end
+
+	#
 	def about
 		puts "Your gender is #{@gender}!"
 		puts "Your ethnicity is #{@ethnicity}!"
+		puts "Here is the #{@reindeer_ranking}!"
+		puts "Santa is #{age} year(s) old!"
 	end
 
 end
 
+=begin
 #Testing if new Santa is created
 santa = Santa.new("male", "white")
 santa.speak
@@ -66,5 +92,14 @@ example_genders.length.times do
   santa = Santa.new(example_genders.sample, example_ethnicities.sample)
   santa.about
 end
+=end
 
-
+#Driver code to test class
+santa = Santa.new("male", "white")
+santa.speak
+santa.eat_milk_and_cookies("Chocolate Chip")
+santa.about
+santa.celebrate_birthday
+santa.get_mad_at("Vixen")
+santa.gender = "No one knows"
+santa.about
