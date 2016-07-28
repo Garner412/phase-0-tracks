@@ -99,3 +99,15 @@ update_quantity(grocery_list, "milk", 5)
 p grocery_list
 print_list(grocery_list)
 =end
+new_list = create_list
+p new_list
+add_item(new_list, "lemonade", 2)
+add_item(new_list, "tomatoes", 3)
+add_item(new_list, "onions", 1)
+add_item(new_list, "ice cream", 4)
+p new_list
+remove_item(new_list, "lemonade")
+p new_list
+update_quantity(new_list, "ice cream", 1)
+p new_list
+p print_list(new_list)
