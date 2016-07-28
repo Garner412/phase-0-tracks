@@ -39,10 +39,10 @@ end
 # steps: specify the hash we're adding to. Push new data into the hash.
 # output: hash with new added key and value
 
-def add_item(list, item, quantity)
-  list[item] = quantity  
-  list
-end
+# def add_item(list, item, quantity)
+#  list[item] = quantity  
+#  list
+# end
 
 
 # p add_item(grocery_list, "milk", 2)
@@ -64,16 +64,16 @@ def remove_item(list, item)
 end
 
 
-
 # Method to update the quantity of an item
 # input: hash name, item name, and new quantity
 # steps: specify the hash we're updating, specify the key to be changed, pushing new value to the key.
 # output: updated hash with new quantity
 
-def update_quantity(list, item, quantity)
+def update_item(list, item, quantity)
   list[item] = quantity
   list
 end
+
 
 # Method to print a list and make it look pretty
 # input: hash
@@ -99,6 +99,9 @@ update_quantity(grocery_list, "milk", 5)
 p grocery_list
 print_list(grocery_list)
 =end
+
+=begin
+# Release 3
 new_list = create_list
 p new_list
 add_item(new_list, "lemonade", 2)
@@ -111,3 +114,17 @@ p new_list
 update_quantity(new_list, "ice cream", 1)
 p new_list
 p print_list(new_list)
+=end
+
+# Release 4:
+# Refactoring:
+# update and add item were interchangeable so we got rid of add_item
+refactored_list = create_list
+update_item(refactored_list, "peaches", 2)
+p refactored_list
+update_item(refactored_list, "honey", 1)
+p refactored_list
+update_item(refactored_list, "peaches", 10)
+p refactored_list 
+remove_item(refactored_list, "honey")
+p refactored_list
