@@ -128,3 +128,23 @@ update_item(refactored_list, "peaches", 10)
 p refactored_list 
 remove_item(refactored_list, "honey")
 p refactored_list
+
+
+# Reflection
+=begin
+What did you learn about pseudocode from working on this challenge?
+	I learned that pseudocode can make writing the actual code a lot easier. It is a way to organize your thoughts on the best way to write it to make sure you understand the problem as well as know how to address it.
+What are the tradeoffs of using arrays and hashes for this challenge?
+	Arrays allow you to keep a group of items all stored together, but hashes allow you to provide a value to the items you're storing. When creating a list where you are tracking the quantity of items, a hash allows you to keep the two together.
+What does a method return?
+	A method returns a value after performing a set of steps on an input.
+What kind of things can you pass into methods as arguments?
+	You can pass in array, hashes, strings, integers
+How can you pass information between methods?
+	You can return a value. Another way is to set a variable equal to the value of the method. The variable would then contain the information from one array. You can then use that variable in a different method.
+What concepts were solidified in this challenge, and what concepts are still confusing?
+	Understanding input and output from methods has definitely been one of the areas I've been struggling to understand. This definitely helped me to understand how to pass information between the two. 
+	Another area I think I could use more practice and understanding is initializing hashes. I still have some uncertainty when it comes to that.
+
+=end
+	
