@@ -10,11 +10,28 @@ Guesses are limited, and the number of guesses available is related to the lengt
 	A loop that compares the number of guesses to the length of the word. Need to set a loop counter that adds to the count every failed guess.
 
 Repeated guesses do not count against the user.
-	Need to store the guesses, if the guess is already in the array we'll be storing them in, do not add to the count or add it to the array (possible some type of unique method?)
+	- Need to store the guesses 
+	- If the guess is already in the array we'll be storing them in, do not add to the count or add it to the array (possible some type of unique method?)
+	- Use If/Else for the guess_count adder. If the the guess array includes the guess skip the += function.
 
 The guessing player receives continual feedback on the current state of the word. 
 So if the secret word is "unicorn", the user will start out seeing something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
-	
+
+	- add " _" to as many times as letters. 
+	- Merge the array together into a string. 
+	- Display the string in the above format for display to the console. 
+	- Set this to a new variable for display DON'T CHANGE MASTER ARRAY!!!!
+
+	- Cycle through each index of the array to see if the guess is included. 
+	- IF it is, update the correct_guess array to update that index number to the guessed letter
+	- Merge array into a string.
+	- Display the string in the above format with the updated letter included.
+
 
 The user should get a congratulatory message if they win, and a taunting message if they lose.
-	
+	- IF user1_word == correct_guess, display congratulatory message.
+	- ELSE display loser message.
+
+
+
+use index numbers and interpolation to output correct guesses. Bascially, update the array if the guess is correct to override the _ that was displayed previously
