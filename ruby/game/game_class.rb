@@ -2,10 +2,9 @@
 
 class Game
 
-
 	def initialize(user1_word)
 		@secret_word = user1_word.split('')
-		correct_guess = []
+		@correct_guess = []
 	end
 
 	def about
@@ -19,6 +18,14 @@ class Game
 			puts "#{user2_guess} is not included in the secret word!"
 		end
 	end
+
+	def current_status(user1_word)
+		user1_word.length.times.each do
+			@correct_guess << "_ "
+		end
+		@correct_guess.join
+	end
+
 
 end
 
@@ -38,6 +45,8 @@ user1_word = gets.chomp.downcase
 game = Game.new(user1_word)
 game.about
 puts "User 2, the word is #{user1_word.length} letters long."
+puts "Here is the current status of your guessing:"
+puts game.current_status(user1_word)
 loop do
 	break if guess_count >= user1_word.length
 puts "User 2, please guess a letter."
