@@ -1,7 +1,7 @@
 # Game Logic
 
 class Game
-	attr_reader :secret_word, :correct_guess
+	attr_reader :secret_word, :correct_guess, :win
 	attr_accessor :guesses_remaining
 
 	def initialize(user1_word)
@@ -10,12 +10,13 @@ class Game
 		@wrong_guesses = []
 		@update_spots = []
 		@correct_guess = []
+		@win = false
 		user1_word.length.times.each do
 			@correct_guess << "_"
 			@correct_guess
 		end
 
-		p @secret_word.join(' ')
+		@secret_word.join(' ')
 	end
 
 	def about
@@ -60,16 +61,11 @@ class Game
 		@wrong_guesses
 	end
 
-	# def current_status(user1_word)
-	# 	user1_word.length.times.each do
-	# 		@correct_guess << "_"
-	# 	end
-	# 	@correct_guess.join(' ')
-	# end
 
-	def winner(secret_word, correct_guess)
+	def winner(secret_word, correct_guess, winner)
 		if @secret_word.join(' ') == @correct_guess.join(' ')
 			puts "You're the winner!!!"
+			@win = true
 		end
 	end
 end
@@ -82,7 +78,7 @@ end
 # game.guess_logic('c')
 
 # User Interface
-# guesses_remaining = 0
+
 correct_guess = []
 
 puts "Welcome to the guessing game. The game where all great guessers guess their way to guessing greatness!"
@@ -93,20 +89,22 @@ game = Game.new(user1_word)
 game.guesses_remaining = user1_word.length
 
 puts "User 2, the word is #{user1_word.length} letters long."
-puts "Here is the current status of your guessing:"
+puts "You have #{game.guesses_remaining} guesses remaining!"
 game.current_status
 
 loop do
 	break if game.guesses_remaining == 0
-		puts "You are a loser!!!"
 puts correct_guess.join(' ')
 puts "User 2, please guess a letter. #{game.guesses_remaining} guesses remaining!"
 user2_guess = gets.chomp.downcase
 
 game.guess_logic(user2_guess)
-game.winner(@secret_word, @correct_guess)
+game.winner(@secret_word, @correct_guess, @winner)
 	break if game.secret_word == game.correct_guess
 # guesses_remaining -= 1
+end
+if game.win == false
+	puts "You're a loser!!!"
 end
 
 game.about
