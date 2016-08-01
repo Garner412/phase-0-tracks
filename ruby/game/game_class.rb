@@ -15,7 +15,6 @@ class Game
 			@correct_guess << "_"
 			@correct_guess
 		end
-
 		@secret_word.join(' ')
 	end
 
@@ -42,13 +41,10 @@ class Game
 			current_status
 			@guesses_remaining -= 1
 		end
-		# p @secret_word
-		# p @correct_guess
 	end
 
 	def right_guess(user2_guess)
 		@update_spots = @secret_word.each_index.select {|i| @secret_word[i] == (user2_guess)}
-		# p @update_spots
 		@update_spots.each do |index|
 			@correct_guess[index] = user2_guess
 		end
@@ -62,7 +58,7 @@ class Game
 	end
 
 
-	def winner(secret_word, correct_guess, winner)
+	def winner(secret_word, correct_guess)
 		if @secret_word.join(' ') == @correct_guess.join(' ')
 			puts "You're the winner!!!"
 			@win = true
@@ -70,12 +66,6 @@ class Game
 	end
 end
 
-
-# Driver Code 
-
-# game = Game.new("secret")
-# game.about
-# game.guess_logic('c')
 
 # User Interface
 
@@ -99,9 +89,9 @@ puts "User 2, please guess a letter. #{game.guesses_remaining} guesses remaining
 user2_guess = gets.chomp.downcase
 
 game.guess_logic(user2_guess)
-game.winner(@secret_word, @correct_guess, @winner)
+game.winner(@secret_word, @correct_guess)
 	break if game.secret_word == game.correct_guess
-# guesses_remaining -= 1
+
 end
 if game.win == false
 	puts "You're a loser!!!"
