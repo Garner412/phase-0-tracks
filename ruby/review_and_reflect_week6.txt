@@ -1,0 +1,26 @@
+1. What are classes? Be sure to define the following terms in your explanation and describe the relationships between them:
+
+	Class serve as a blueprint for creating future objects. Each different object is a different instance of the class. It will allow the program to create more objects that will "already know things" without needing to be programmed individually. The things the object already knows about itself are called instance variables. The state involves different characteristics that can change between different instances of the class. The behavior is a common ground that each instance will act similarly and can be called upon when needed. Instance methods are methods you call upon the instance. It is important to understand that instance methods and class methods are different. 
+
+	An example of this would be creating a dog class, then creating different instances for different breeds of dogs. They all have things in common which it will acquire from the class, but they will all have different qualities (color, size, etc). These dogs will all have the capability of acting similarly, so you can choose which methods are applicable to the particlar instance of dog.
+
+
+2. What are attributes?
+	Attributes are the instance variables of a class instance. They are specific to the instance of the class and can be changed for that particular instance. They can be accessed by attr_reader, accessor, or writer.
+
+3. Give an example of a real world object, and describe how you might assign its attributes if you were to design a class to represent that object.
+	We could have a Car class. Some attributes could be:
+		- make
+		- model
+		- year
+		- color
+
+4. What is the purpose of the initialize method? When does it run?
+	To run at the beginning of an instance of a class. It helps to set up a few things for that instance. It can initialize variables to be used throughout the class or even so they may be accessed from outside the class. This will help with inputting data at the beginning of the instance.
+
+5. What are modules?
+	Modules are sets of methods that work together. Often they are used to perform methods that are often used together frequently. Instead of calling all of the methods seperately, you would call the module.
+
+6. What are the different ways you can use a module?
+	You can use the module for compartmentalization. Which can help seperate similar tasks with a few slight variations. This way, similar methods don't confuse other programmers because they have a similar name and function. 
+	They can be used as mixins. Allowing classes to have similar functions across multiple classes where that set of methods might be the only similarity between the classes.
