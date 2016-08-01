@@ -14,6 +14,8 @@ Repeated guesses do not count against the user.
 	- If the guess is already in the array we'll be storing them in, do not add to the count or add it to the array (possible some type of unique method?)
 	- Use If/Else for the guess_count adder. If the the guess array includes the guess skip the += function.
 
+	- Maybe put the counter in the guess_logic method and only change it if the wrong guess path is exercised.
+
 The guessing player receives continual feedback on the current state of the word. 
 So if the secret word is "unicorn", the user will start out seeing something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
 
