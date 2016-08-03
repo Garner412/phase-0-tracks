@@ -4,3 +4,13 @@
 // We then need to work backwards until we reach the 0 index of the string adding each variable to the end of the new variable.
 // We can then return the new variable as our new reversed string.
 
+function reverse(str) {
+	strReversed = "";
+	for (var i = str.length - 1; i >= 0; i--)
+		strReversed += str[i];
+	return strReversed;	
+}
+
+console.log(reverse("hello"));
+var reversedString = reverse("hello");
+console.log(reversedString);
