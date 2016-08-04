@@ -4,45 +4,51 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+#require_relative allows a file to gain access to another file within the same directory
+#require has access to any file anywhere on the computer; access to gems 
+
 require_relative 'state_data'
 require 'pry'
 
 class VirusPredictor
-
+#initialize instance of the VirusPredictor class with attributes of @state, @population, @population_density
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-
+  
+#calls two methods
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+#returns number_of_deaths by state based on population_density
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+      multiplier = 0.4
     elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
+      multiplier = 0.3
     elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
+      multiplier = 0.2
     elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+      multiplier = 0.1
     else
-      number_of_deaths = (@population * 0.05).floor
+      multiplier = 0.05
     end
-
+    number_of_deaths = (@population * multiplier).floor
+    
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+
+#returns speed variable based on population density
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -85,8 +91,8 @@ alaska.virus_effects
 
 
 STATE_DATA.each do |state, population_info|
-  binding.pry
-  VirusPredictor.new(state, population_info[:population_density], population_info[:population])
+  # binding.pry
+ VirusPredictor.new(state, population_info[:population_density], population_info[:population]).virus_effects
 end
 
 
