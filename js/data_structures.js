@@ -15,3 +15,24 @@ for(var i = 0; i < names.length; i++){
  horses[names[i]] = colors[i];
 }
 console.log(horses);
+
+function Car(make, model, year) {
+ this.make = make;
+ this.model = model;
+ this.year = year;
+ this.vroom = function() {
+   if (make == "ford") {
+     console.log("vrooooom!");
+   } else {
+     console.log("pptttppptpp ptpptpt");
+   }
+ }
+}
+
+var ford = new Car("ford","mustang", 1987);
+console.log(ford);
+ford.vroom();
+
+var chevy = new Car("chevy","malibu", 2000);
+console.log(chevy);
+chevy.vroom();
