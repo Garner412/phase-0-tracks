@@ -8,8 +8,7 @@ describe Game do
 	end
 
   	it "returns the _ spaces for the word" do
-  		user1_word = "secret"
-   	expect(game.correct_guess).to eq "_ _ _ _ _ _"
+   	expect(game.current_status).to eq "_ _ _ _ _ _"
   	end
 
 	it "checks for incorrect letter" do
