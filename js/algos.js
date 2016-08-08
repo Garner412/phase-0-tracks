@@ -69,8 +69,6 @@ var alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 
 
-
-
 // DRIVE CODE
 
 // Release 0
@@ -94,3 +92,8 @@ randomTestData(8);
 randomTestData(3);
 randomTestData(4);
 
+console.log("----Use longest_word with randomTestData----");
+
+for (var i = 0; i < 10; i++) {
+	longest_word(randomTestData(Math.floor((Math.random() * 10) + 1)));
+}
