@@ -24,7 +24,15 @@ function longest_word(array) {
 // If there is a match, return true
 // If there is not match, return false
 
-
+function compareValue(obj1, obj2) {
+	if ((obj1.name == obj2.name) || (obj1.age == obj2.age)) {
+		console.log(true);
+		return true; 
+	} else {
+		console.log(false);
+		return false;
+	}
+}
 
 
 
@@ -48,6 +56,9 @@ longest_word(["five", "three", "two", "four", "one"])
 
 // Release 1
 
+compareValue({name: "Greg", age: 26}, {name:"Tim", age: 26})
+compareValue({name: "Bob", age: 50}, {name: "Bob", age: 25})
+compareValue({name: "Jeff", age: 12}, {name: "Anthony", age: 24})
 
 
 
