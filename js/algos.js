@@ -51,6 +51,21 @@ function compareValue(obj1, obj2) {
 // When loop finishes, add the word to the array
 // Return the final array
 
+function randomTestData(int) {
+var createdWordsArray = [];
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	for (var i = 0; i < int; i++) {
+		var wordLength = Math.floor((Math.random() * 10) + 1);
+		var createdWord = "";
+			for (var j = 0; j < wordLength; j++) {
+              randomLetter = alphabet.charAt(Math.floor((Math.random() * 25) + 1));
+              createdWord += randomLetter;
+			}
+			createdWordsArray.push(createdWord);
+	}
+	console.log(createdWordsArray);
+	return createdWordsArray;
+}
 
 
 
@@ -59,21 +74,23 @@ function compareValue(obj1, obj2) {
 // DRIVE CODE
 
 // Release 0
-console.log("----Release 0----")
-longest_word(["long phrase","longest phrase","longer phrase"])
-longest_word(["z", "zz", "zzz", "zzzz", "zzzzz", "a"])
-longest_word(["five", "three", "two", "four", "one"])
+console.log("----Release 0----");
+longest_word(["long phrase","longest phrase","longer phrase"]);
+longest_word(["z", "zz", "zzz", "zzzz", "zzzzz", "a"]);
+longest_word(["five", "three", "two", "four", "one"]);
 
 
 // Release 1
-console.log("----Release 1----")
-compareValue({name: "Greg", age: 26}, {name:"Tim", age: 26})
-compareValue({name: "Bob", age: 50}, {name: "Bob", age: 25})
-compareValue({name: "Jeff", age: 12}, {name: "Anthony", age: 24})
+console.log("----Release 1----");
+compareValue({name: "Greg", age: 26}, {name:"Tim", age: 26});
+compareValue({name: "Bob", age: 50}, {name: "Bob", age: 25});
+compareValue({name: "Jeff", age: 12}, {name: "Anthony", age: 24});
 
 
 
 // Release 2
-console.log("----Release 2----")
-
+console.log("----Release 2----");
+randomTestData(8);
+randomTestData(3);
+randomTestData(4);
 
