@@ -11,11 +11,15 @@ class Game
 		@update_spots = []
 		@correct_guess = []
 		@win = false
+		dashes(user1_word)
+		@secret_word.join(' ')
+	end
+
+	def dashes(user1_word)
 		user1_word.length.times.each do
 			@correct_guess << "_"
 			@correct_guess
 		end
-		@secret_word.join(' ')
 	end
 
 	def about
