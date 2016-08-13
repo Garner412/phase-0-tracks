@@ -1,0 +1,103 @@
+
+### Release 2 ###
+
+Run a SQL query for each of the following:
+
+- Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM Liquor;
+
+1|Jack Daniels|Sour Mash|1|USA|1875
+2|Jose Cuervo|Especial Gold|5|Mexico|1795
+3|Barcardi|151|3|Cuba|1862
+4|Campari Group|Skyy Vodka|2|USA|1992
+5|Barcardi|Bombay Sapphire|4|England|1987
+
+
+- Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE Liquor SET country="Bermuda" WHERE name="151";
+
+sqlite> SELECT * FROM liquor WHERE name="151";
+
+3|Barcardi|151|3|Bermuda|1862
+
+
+- Display the information in both tables using one query.
+
+sqlite> SELECT * FROM liquor, type_of_liquor WHERE liquor.liquor_type = type_of_liquor.id;
+
+1|Jack Daniels|Sour Mash|1|USA|1875|1|Whiskey
+2|Jose Cuervo|Especial Gold|5|Mexico|1795|5|Tequilla
+3|Barcardi|151|3|Bermuda|1862|3|Rum
+4|Campari Group|Skyy Vodka|2|USA|1992|2|Vodka
+5|Barcardi|Bombay Sapphire|4|England|1987|4|Gin
+
+
+- Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT liquor.distiller, liquor.name, type_of_liquor.type, liquor.country, liquor.year_founded FROM liquor JOIN type_of_liquor ON liquor.liquor_type = type_of_liquor.id;
+
+Jack Daniels|Sour Mash|Whiskey|USA|1875
+Jose Cuervo|Especial Gold|Tequilla|Mexico|1795
+Barcardi|151|Rum|Bermuda|1862
+Campari Group|Skyy Vodka|Vodka|USA|1992
+Barcardi|Bombay Sapphire|Gin|England|1987
+
+
+- Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM liquor WHERE distiller="Barcardi";
+
+sqlite> SELECT * FROM liquor;
+
+1|Jack Daniels|Sour Mash|1|USA|1875
+2|Jose Cuervo|Especial Gold|5|Mexico|1795
+4|Campari Group|Skyy Vodka|2|USA|1992
+
+
+
+
+### Release 3 ###
+
+- There are lots of different kinds of joins. What are they? Can you apply different conditions to a join to change what's displayed? Can you bookmark any good diagrams that will help you tell different joins apart in the future?
+
+Inner Join - returns rows when there is a match in both tables
+Left Join - Returns all rows from the left table even when there are no matches in the right table
+Right Join - Returns all rows from the right table even when there are no matches in the left table
+
+You can choice which columns you want to display from the different tables.
+
+
+- Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+- INNER JOIN
+
+sqlite> SELECT liquor.distiller, liquor.name, type_of_liquor.type, liquor.country, liquor.year_founded FROM liquor INNER JOIN type_of_liquor ON liquor.liquor_type = type_of_liquor.id;
+
+Jack Daniels|Sour Mash|Whiskey|USA|1875
+Jose Cuervo|Especial Gold|Tequilla|Mexico|1795
+Campari Group|Skyy Vodka|Vodka|USA|1992
+Barcardi|151|Rum|Cuba|1862
+Barcardi|Bombay Sapphire|Gin|England|1987
+
+
+- LEFT JOIN
+
+sqlite> SELECT liquor.distiller, liquor.name, type_of_liquor.type, liquor.country, liquor.year_founded FROM liquor LEFT JOIN type_of_liquor ON liquor.liquor_type = type_of_liquor.id;
+
+Jack Daniels|Sour Mash|Whiskey|USA|1875
+Jose Cuervo|Especial Gold|Tequilla|Mexico|1795
+Campari Group|Skyy Vodka|Vodka|USA|1992
+Barcardi|151|Rum|Cuba|1862
+Barcardi|Bombay Sapphire|Gin|England|1987
+Piedmont Distillers|Midnight Moonshine||USA|2007
+
+
+- RIGHT JOIN
+
+sqlite> SELECT liquor.distiller, liquor.name, type_of_liquor.type, liquor.country, liquor.year_founded FROM liquor RIGHT OUTER JOIN type_of_liquor ON liquor.liquor_type = type_of_liquor.id;
+
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+
