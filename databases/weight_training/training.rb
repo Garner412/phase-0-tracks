@@ -1,28 +1,38 @@
 
-# Training Program to calculate weight to use
+# Training Program to track workouts
 
-# require gems
+# # require gems
 require 'sqlite3'
 require 'faker'
 
-# create SQLite3 database
+# # create SQLite3 database
 db = SQLite3::Database.new("training.db")
-# db.results_as_hash = true
+db.results_as_hash = true
 
 # # learn about fancy string delimiters
-# create_table_cmd = <<-SQL
-#   CREATE TABLE IF NOT EXISTS kittens(
-#     id INTEGER PRIMARY KEY,
-#     name VARCHAR(255),
-#     age INT
-#   )
-# SQL
+create_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS workouts (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+    exercise VARCHAR(255),
+    weight INT,
+    sets INT,
+    reps INT
+  )
+SQL
 
-# # create a kittens table (if it's not there already)
-# db.execute(create_table_cmd)
+# # create a training table (if it's not there already)
+db.execute(create_table_cmd)
+ 
+# # add a test user
+# db.execute("INSERT INTO workouts (name, exercise, weight, sets, reps) VALUES ('Tester', 'testercise', 100, 3, 10)")
 
-# # add a test kitten
-# # db.execute("INSERT INTO kittens (name, age) VALUES ('Bob', 10)")
+
+# # Retrieve Data
+workout = db.execute("SELECT * FROM workouts")
+workout.each do |workout|
+	puts "#{workout['name']} performed #{workout['sets']} sets of #{workout['reps']} reps with #{workout['weight']} pounds while #{workout['exercise']}ing."
+end
 
 # # add LOOOOTS of kittens!
 # # so. many. kittens. 
