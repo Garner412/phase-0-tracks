@@ -39,6 +39,7 @@ puts "    5. Exit"
 
 user_choice = gets.to_i
 
+# # Exit program
 break if user_choice == 5
 
 # # 1 - Log new workout
@@ -68,12 +69,68 @@ if user_choice == 1
     log_more = gets.chomp
     break if log_more == 'n'
     end
+
 # # 2 - Look up past workout
 elsif user_choice == 2
-  puts "You selected 2"
+loop do
+  puts "How would you like to search for your workout?"
+  puts "1. Date"
+  puts "2. Name"
+  puts "3. Exercise"
+  puts "4. Return to main menu"
+search_choice = gets.to_i
+break if search_choice == 4
+if search_choice == 1
+	puts "Please enter the date you would like to search for: "
+	search_date = gets.chomp
+	workout = db.execute("SELECT * FROM workouts WHERE date=?", search_date)
+	workout.each do |workout|
+		puts "----------"
+		puts "Date: #{workout['date']}"
+		puts "Person: #{workout['name']}"
+		puts "Exercise: #{workout['exercise']}"
+		puts "Weight: #{workout['weight']}"
+		puts "Set: #{workout['sets']}"
+		puts "Reps: #{workout['reps']}"
+		puts "----------"
+	end
+elsif search_choice == 2
+	puts "Please enter the name you would like to search for: "
+	search_name = gets.chomp
+	workout = db.execute("SELECT * FROM workouts WHERE name=?", search_name)
+	workout.each do |workout|
+		puts "----------"
+		puts "Date: #{workout['date']}"
+		puts "Person: #{workout['name']}"
+		puts "Exercise: #{workout['exercise']}"
+		puts "Weight: #{workout['weight']}"
+		puts "Set: #{workout['sets']}"
+		puts "Reps: #{workout['reps']}"
+		puts "----------"
+	end
+elsif search_choice == 3
+	puts "Please enter the exercise you would like to search for: "
+	search_exercise = gets.chomp
+	workout = db.execute("SELECT * FROM workouts WHERE exercise=?", search_exercise)
+	workout.each do |workout|
+		puts "----------"
+		puts "Date: #{workout['date']}"
+		puts "Person: #{workout['name']}"
+		puts "Exercise: #{workout['exercise']}"
+		puts "Weight: #{workout['weight']}"
+		puts "Set: #{workout['sets']}"
+		puts "Reps: #{workout['reps']}"
+		puts "----------"
+	end
+else
+	puts "Invalid choice, please select 1-5."
+end
+end
+
 # # 3 - Update past workout
 elsif user_choice == 3
   puts "You selected 3"
+
 # # 4 - Motivational quote
 elsif user_choice == 4
   motivational_quotes = [
@@ -103,27 +160,30 @@ elsif user_choice == 4
   puts "--------------"
   puts motivational_quotes.sample
   puts "--------------"
+
 # # Invalid input
 else
-  puts "I didn't not understand your choice, please select 1-5."
-# # 5 - exit program
+  puts "Invalid choice, please select 1-5."
 
 end
 
 end
-puts "Keep up the workouts!"
+puts "Keep working out!"
+
+
+
 
 # # explore ORM by retrieving data (all data from all workouts)
 
-workout = db.execute("SELECT * FROM workouts")
-workout.each do |workout|
-	puts "----------"
-	puts "Date: #{workout['date']}"
-	puts "Person: #{workout['name']}"
-	puts "Exercise: #{workout['exercise']}"
-	puts "Weight: #{workout['weight']}"
-	puts "Set: #{workout['sets']}"
-	puts "Reps: #{workout['reps']}"
-	puts "----------"
-end
+# workout = db.execute("SELECT * FROM workouts")
+# workout.each do |workout|
+# 	puts "----------"
+# 	puts "Date: #{workout['date']}"
+# 	puts "Person: #{workout['name']}"
+# 	puts "Exercise: #{workout['exercise']}"
+# 	puts "Weight: #{workout['weight']}"
+# 	puts "Set: #{workout['sets']}"
+# 	puts "Reps: #{workout['reps']}"
+# 	puts "----------"
+# end
 
