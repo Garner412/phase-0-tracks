@@ -30,6 +30,7 @@ db.execute(create_table_cmd)
 
 # # User Interface
 loop do
+puts "-------------------------------"
 puts "Hello! What would you like to do? (select a number)"
 puts "    1. Log a new workout"
 puts "    2. Look up a past workout"
@@ -73,6 +74,7 @@ if user_choice == 1
 # # 2 - Look up past workout
 elsif user_choice == 2
 loop do
+  puts "-------------------------------"
   puts "How would you like to search for your workout?"
   puts "1. Date"
   puts "2. Name"
@@ -81,46 +83,46 @@ loop do
 search_choice = gets.to_i
 break if search_choice == 4
 if search_choice == 1
-	puts "Please enter the date you would like to search for: "
+	puts "Please enter the date you would like to search for: (MM/DD/YY)"
 	search_date = gets.chomp
 	workout = db.execute("SELECT * FROM workouts WHERE date=?", search_date)
 	workout.each do |workout|
-		puts "----------"
+		puts "-------------------------------"
 		puts "Date: #{workout['date']}"
 		puts "Person: #{workout['name']}"
 		puts "Exercise: #{workout['exercise']}"
 		puts "Weight: #{workout['weight']}"
-		puts "Set: #{workout['sets']}"
+		puts "Sets: #{workout['sets']}"
 		puts "Reps: #{workout['reps']}"
-		puts "----------"
+		puts "-------------------------------"
 	end
 elsif search_choice == 2
 	puts "Please enter the name you would like to search for: "
 	search_name = gets.chomp
 	workout = db.execute("SELECT * FROM workouts WHERE name=?", search_name)
 	workout.each do |workout|
-		puts "----------"
+		puts "-------------------------------"
 		puts "Date: #{workout['date']}"
 		puts "Person: #{workout['name']}"
 		puts "Exercise: #{workout['exercise']}"
 		puts "Weight: #{workout['weight']}"
-		puts "Set: #{workout['sets']}"
+		puts "Sets: #{workout['sets']}"
 		puts "Reps: #{workout['reps']}"
-		puts "----------"
+		puts "-------------------------------"
 	end
 elsif search_choice == 3
 	puts "Please enter the exercise you would like to search for: "
 	search_exercise = gets.chomp
 	workout = db.execute("SELECT * FROM workouts WHERE exercise=?", search_exercise)
 	workout.each do |workout|
-		puts "----------"
+		puts "-------------------------------"
 		puts "Date: #{workout['date']}"
 		puts "Person: #{workout['name']}"
 		puts "Exercise: #{workout['exercise']}"
 		puts "Weight: #{workout['weight']}"
-		puts "Set: #{workout['sets']}"
+		puts "Sets: #{workout['sets']}"
 		puts "Reps: #{workout['reps']}"
-		puts "----------"
+		puts "-------------------------------"
 	end
 else
 	puts "Invalid choice, please select 1-5."
@@ -129,8 +131,91 @@ end
 
 # # 3 - Update past workout
 elsif user_choice == 3
-  puts "You selected 3"
+puts "Please enter the name you would like to name for: "
+	update_name = gets.chomp
+	workout = db.execute("SELECT * FROM workouts WHERE name=?", update_name)
+	workout.each do |workout|
+		puts "-------------------------------"
+		puts "Date: #{workout['date']}"
+		puts "Person: #{workout['name']}"
+		puts "Exercise: #{workout['exercise']}"
+		puts "Weight: #{workout['weight']}"
+		puts "Sets: #{workout['sets']}"
+		puts "Reps: #{workout['reps']}"
+		puts "-------------------------------"
+	end
+puts "Please enter the exercise you would like to update for: "
+	update_exercise = gets.chomp
+	workout = db.execute("SELECT * FROM workouts WHERE name=? AND exercise=?", update_name, update_exercise)
+	workout.each do |workout|
+		puts "-------------------------------"
+		puts "Date: #{workout['date']}"
+		puts "Person: #{workout['name']}"
+		puts "Exercise: #{workout['exercise']}"
+		puts "Weight: #{workout['weight']}"
+		puts "Sets: #{workout['sets']}"
+		puts "Reps: #{workout['reps']}"
+		puts "-------------------------------"
+	end
+puts "Please enter the date you would like to update for: (MM/DD/YY)"
+	update_date = gets.chomp
+	workout = db.execute("SELECT * FROM workouts WHERE name=? AND exercise=? AND date=?", update_name, update_exercise, update_date)
+	update_key = db.execute("SELECT id FROM workouts WHERE name=? AND exercise=? AND date=?", update_name, update_exercise, update_date)
+	puts update_key
+	update_key_hash = update_key[0]
+	p update_key_hash[0]
+	workout.each do |workout|
+		puts "-------------------------------"
+		puts "Date: #{workout['date']}"
+		puts "Person: #{workout['name']}"
+		puts "Exercise: #{workout['exercise']}"
+		puts "Weight: #{workout['weight']}"
+		puts "Sets: #{workout['sets']}"
+		puts "Reps: #{workout['reps']}"
+		puts "-------------------------------"
+	end
 
+loop do
+	puts "What value would you like to update?"
+	puts "1. Date"
+	puts "2. Person"
+	puts "3. Exercise"
+	puts "4. Weight"
+	puts "5. Sets"
+	puts "6. Reps"
+	puts "7. Exit to Main Menu"
+	update_choice = gets.to_i
+
+	break if update_choice == 7
+
+	if update_choice == 1
+		puts "What would you like to update the date to?"
+		date_update = gets.chomp
+		db.execute("UPDATE workouts SET date=? WHERE id=?", date_update, update_key_hash[0])
+	elsif update_choice == 2
+		puts "What would you like to update the name to?"
+		name_update = gets.chomp
+		db.execute("UPDATE workouts SET name=? WHERE id=?", name_update, update_key_hash[0])
+	elsif update_choice == 3
+		puts "What would you like to update the exercise to?"
+		exercise_update = gets.chomp
+		db.execute("UPDATE workouts SET exercise=? WHERE id=?", exercise_update, update_key_hash[0])
+	elsif update_choice == 4
+		puts "What would you like to update the weight to?"
+		weight_update = gets.to_i
+		db.execute("UPDATE workouts SET weight=? WHERE id=?", weight_update, update_key_hash[0])
+	elsif update_choice == 5
+		puts "What would you like to update the sets to?"
+		sets_update = gets.to_i
+		db.execute("UPDATE workouts SET sets=? WHERE id=?", sets_update, update_key_hash[0])
+	elsif update_choice == 6
+		puts "What would you like to update the reps to?"
+		reps_update = gets.to_i
+		db.execute("UPDATE workouts SET reps=? WHERE id=?", reps_update, update_key_hash[0])
+	else
+		puts "Invalid choice, please select 1-7."
+	end
+end
 # # 4 - Motivational quote
 elsif user_choice == 4
   motivational_quotes = [
@@ -141,7 +226,7 @@ elsif user_choice == 4
     "If something stands between you and your success, move it. Never be denied. - Dwayne \"The Rock\" Johnson",
     "There comes a certain point in life when you have to stop blaming other people for how you feel or the misfortunes in your life. You can’t go through life obsessing about what might have been. - Hugh Jackman",
     "Success is usually the culmination of controlling failure. - Sylvester Stallone",
-    "Don’t be afraid of failure. This is the way to succeed. - Lebron James",
+    "Don’t be afraid of failure. This is the way to succeed. - LeBron James",
     "I will sacrifice whatever is necessary to be the best. - JJ Watt",
     "Most people give up right before the big break comes—don’t let that person be you. - Michael Boyle",
     "I feel an endless need to learn, to improve, to evolve—not only to please the coach and the fans—but also to feel satisfied with myself. - Cristiano Ronaldo",
@@ -157,9 +242,8 @@ elsif user_choice == 4
     "I know that if I set my mind to something, even if people are saying I can’t do it, I will achieve it. - David Beckham",
     "We must appreciate and never underestimate our own inner power. - Noah Galloway"
   ]
-  puts "--------------"
+  puts "-------------------------------"
   puts motivational_quotes.sample
-  puts "--------------"
 
 # # Invalid input
 else
@@ -170,20 +254,4 @@ end
 end
 puts "Keep working out!"
 
-
-
-
-# # explore ORM by retrieving data (all data from all workouts)
-
-# workout = db.execute("SELECT * FROM workouts")
-# workout.each do |workout|
-# 	puts "----------"
-# 	puts "Date: #{workout['date']}"
-# 	puts "Person: #{workout['name']}"
-# 	puts "Exercise: #{workout['exercise']}"
-# 	puts "Weight: #{workout['weight']}"
-# 	puts "Set: #{workout['sets']}"
-# 	puts "Reps: #{workout['reps']}"
-# 	puts "----------"
-# end
 
