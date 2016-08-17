@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to the Fun House!</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="jquery-3.1.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".Tricks").hide();
+			$(".countdown").hide();
+			$("#toggle").hide();
+			$("#psyc").hide();
+		});
+		$(document).ready(function(){
+			$("#master").click(function(){
+				$(".Tricks").show();
+				$("#master").hide();
+			});
+		});
+		$(document).ready(function(){
+		    $("#T1").click(function(){
+		        $("#psyc").toggle();
+		    });
+		});
+		$(document).ready(function(){
+		    $("#T2").click(function(){
+		        $(".Welcome").animate({left: '25px'}, "slow");
+		    });
+		});
+		$(document).ready(function(){
+		    $("#T4").click(function(){
+		        $(".Welcome").animate({right: '25px'}, "slow");
+		    });
+		});
+		$(document).ready(function(){
+		    $("#T5").click(function(){
+		        alert("Why did you click this one?")
+		    });
+		});
+		$(document).ready(function(){
+		    $("#T3").click(function(){
+		        $("#T1").toggle();
+		        $("#T2").toggle();
+		        $("#T4").toggle();
+		        $("#T5").toggle();
+		        $("#toggle").toggle();
+		    });
+		});
+		$(document).ready(function(){
+			$("h1").mouseover(function(){
+				$(".Welcome").animate({fontSize: '50px'}, "slow");
+			});
+		});
+		$(document).ready(function(){
+			$("h1").mouseleave(function(){
+				$(".Welcome").animate({fontSize: '25px'}, "slow");
+			});
+		});
+		$(document).ready(function(){
+			$("#DNP").click(function(){
+				$("#selfdest").show();
+				$("#10sec").show();
+				$("#9sec").show(1000);
+				$("#8sec").show(2000);
+				$("#7sec").show(3000);
+				$("#6sec").show(4000);
+				$("#5sec").show(5000);
+				$("#4sec").show(6000);
+				$("#3sec").show(7000);
+				$("#2sec").show(8000);
+				$("#1sec").show(9000);
+				$("#0sec").show(10000);
+				$("#JK").show(15000);
+			});
+		});
+	</script>
+</head>
+<body>
+<h1 class="Welcome">Welcome to the Fun House!</h1>
+<h4 class="Welcome">Where all the fun happens</h4>
+
+<div id="buttons">
+	<button id="master">Click Me... If You Dare...</button>
+	<br>
+	<h3 class="Tricks">Click One Of My Buttons To See Your Fate</h3>
+	<button id="T1" class="Tricks">Door 1</button>
+	<button id="T2" class="Tricks">Door 2</button>
+	<button id="T3" class="Tricks">Door 3</button>
+	<button id="T4" class="Tricks">Door 4</button>
+	<button id="T5" class="Tricks">Door 5</button>
+
+	<p id="toggle">You've just lost your other choices... or have you?</p>
+	<p id="psyc">That doesn't do anything silly... Click me again.</p>
+
+
+	<br><br><br>
+	<p>Heed the Warning!!!</p>
+	<button id="DNP">Do Not Press</button>
+</div>
+
+<p id="selfdest" class="countdown">Your computer will self destruct in...</p>
+<p id="10sec" class="countdown">10</p>
+<p id="9sec" class="countdown">9</p>
+<p id="8sec" class="countdown">8</p>
+<p id="7sec" class="countdown">7</p>
+<p id="6sec" class="countdown">6</p>
+<p id="5sec" class="countdown">5</p>
+<p id="4sec" class="countdown">4</p>
+<p id="3sec" class="countdown">3</p>
+<p id="2sec" class="countdown">2</p>
+<p id="1sec" class="countdown">1</p>
+<p id="0sec" class="countdown">0</p>
+<p id="JK" class="countdown">Just kidding... I'd never do that.</p>
+
+
+</body>
+</html>
