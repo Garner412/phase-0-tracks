@@ -48,8 +48,7 @@ end
 # write a Contact route that displays an address
 
 get '/contact' do
-  contact = params[:contact]
-  "The address is #{params[:contact]}"
+  "The address is 1234 Main St, Big City, Small State 55555"
 end
 
 # write a great job route that displays "Great job, [name]!" if a name is present
@@ -72,3 +71,13 @@ get '/x/y' do
   "#{params[:x]} + #{params[:y]} = #{answer}"
 end
 
+
+get '/students/age/:age' do
+  matching_age = db.execute("SELECT * FROM students WHERE age=?", [params[:age]])[0]
+  profile = ""
+  profile << "ID: #{matching_age['id']}<br>"
+  profile << "Name: #{matching_age['name']}<br>"
+  profile << "Campus: #{matching_age['campus']}<br>"
+  profile << "Age: #{matching_age['age']}"
+  profile
+end
