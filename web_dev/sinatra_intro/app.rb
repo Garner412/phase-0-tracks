@@ -44,3 +44,40 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+# write a Contact route that displays an address
+
+get '/contact' do
+  "The address is 1234 Main St, Big City, Small State 55555"
+end
+
+# write a great job route that displays "Great job, [name]!" if a name is present
+# if there's no [name] it displays "Great job!"
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Great job, #{params[:name]}!"
+  else
+    "Great job!"
+  end
+end
+
+# write a route that accepts two integers and returns a result
+get '/x/y' do
+  x = params[:x]
+  y = params[:y]
+  answer = x.to_i + y.to_i
+  "#{params[:x]} + #{params[:y]} = #{answer}"
+end
+
+
+get '/students/age/:age' do
+  matching_age = db.execute("SELECT * FROM students WHERE age=?", [params[:age]])[0]
+  profile = ""
+  profile << "ID: #{matching_age['id']}<br>"
+  profile << "Name: #{matching_age['name']}<br>"
+  profile << "Campus: #{matching_age['campus']}<br>"
+  profile << "Age: #{matching_age['age']}"
+  profile
+end
