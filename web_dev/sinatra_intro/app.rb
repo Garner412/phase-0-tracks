@@ -63,3 +63,12 @@ get '/great_job' do
     "Great job!"
   end
 end
+
+# write a route that accepts two integers and returns a result
+get '/x/y' do
+  x = params[:x]
+  y = params[:y]
+  answer = x.to_i + y.to_i
+  "#{params[:x]} + #{params[:y]} = #{answer}"
+end
+
